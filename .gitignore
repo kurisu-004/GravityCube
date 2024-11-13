@@ -3,4 +3,5 @@
 /android/
 *.sln
 *.csproj
-/Assets/
+Assets/*
+*.import
