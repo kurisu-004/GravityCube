@@ -3,5 +3,9 @@
 /android/
 *.sln
 *.csproj
+<<<<<<< HEAD
 /Assets/
+=======
+Assets/*
+>>>>>>> 41626cd192ac6d4f1d01aad3f563ea78d3f0b71c
 *.import
