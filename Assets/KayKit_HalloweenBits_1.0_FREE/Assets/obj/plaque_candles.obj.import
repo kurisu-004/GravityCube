@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctg50u3e3nveq"
+path="res://.godot/imported/plaque_candles.obj-4c40ba44728bb48f5ed483d5920d443c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/plaque_candles.obj-4c40ba44728bb48f5ed483d5920d443c.mesh"]
+
+source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/obj/plaque_candles.obj"
+dest_files=["res://.godot/imported/plaque_candles.obj-4c40ba44728bb48f5ed483d5920d443c.mesh", "res://.godot/imported/plaque_candles.obj-4c40ba44728bb48f5ed483d5920d443c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

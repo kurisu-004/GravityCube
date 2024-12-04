@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dwikyo5b84mxi"
+path="res://.godot/imported/fence_pillar_broken.obj-39534faf78d8b9a9331e3b2c6a42c1cc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fence_pillar_broken.obj-39534faf78d8b9a9331e3b2c6a42c1cc.mesh"]
+
+source_file="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/obj/fence_pillar_broken.obj"
+dest_files=["res://.godot/imported/fence_pillar_broken.obj-39534faf78d8b9a9331e3b2c6a42c1cc.mesh", "res://.godot/imported/fence_pillar_broken.obj-39534faf78d8b9a9331e3b2c6a42c1cc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
