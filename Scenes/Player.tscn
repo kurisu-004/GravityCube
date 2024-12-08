@@ -13,11 +13,13 @@ script = ExtResource("1_0dnnl")
 [node name="rotationRoot" type="Node3D" parent="."]
 
 [node name="PlayerSkin" parent="rotationRoot" instance=ExtResource("1_ah5kv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.960393, 0)
 shape = SubResource("CapsuleShape3D_407jr")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 6.18172e-08, -6.18172e-08, 6.83912e-08, 0.993627, -0.112718, 5.44553e-08, -0.112718, -0.993627, -3.55271e-14, 1.5733, 0.859531)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.573, 2.08403)
 fov = 93.3673
