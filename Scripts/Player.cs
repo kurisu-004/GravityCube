@@ -125,7 +125,7 @@ public partial class Player : CharacterBody3D
 
 		float rotationSpeed = 0.2f;
 		if (@event.IsActionPressed("rotate_left")) {
-			Vector3 rotationAxis = GlobalTransform.Basis * new Vector3(0,0,1);
+			Vector3 rotationAxis = (GlobalTransform.Basis * new Vector3(0,0,1)).Normalized();
 			float rotationAngle = (float) (-1 * rotationSpeed * Math.PI/2);
 
 			this.gravityVec = this.gravityVec.Rotated(rotationAxis, rotationAngle);
@@ -135,7 +135,7 @@ public partial class Player : CharacterBody3D
 			this.Transform = this.Transform.LookingAt(GlobalPosition + forwardVec, this.UpDirection);
 		}
 		if (@event.IsActionPressed("rotate_right")) {
-			Vector3 rotationAxis = GlobalTransform.Basis * new Vector3(0,0,1);
+			Vector3 rotationAxis = (GlobalTransform.Basis * new Vector3(0,0,1)).Normalized();
 			float rotationAngle = (float) (rotationSpeed * Math.PI/2);
 
 			this.gravityVec = this.gravityVec.Rotated(rotationAxis, rotationAngle);
@@ -145,7 +145,7 @@ public partial class Player : CharacterBody3D
 			this.Transform = this.Transform.LookingAt(GlobalPosition + forwardVec, this.UpDirection);
 		}
 		if (@event.IsActionPressed("rotate_forward")) {
-			Vector3 rotationAxis = GlobalTransform.Basis * new Vector3(1,0,0);
+			Vector3 rotationAxis = (GlobalTransform.Basis * new Vector3(1,0,0)).Normalized();
 			float rotationAngle = (float) (-1 * rotationSpeed * Math.PI/2);
 
 			this.gravityVec = this.gravityVec.Rotated(rotationAxis, rotationAngle);
@@ -155,7 +155,7 @@ public partial class Player : CharacterBody3D
 			this.Transform = this.Transform.LookingAt(GlobalPosition + forwardVec, this.UpDirection);
 		}
 		if (@event.IsActionPressed("rotate_backwards")) {
-			Vector3 rotationAxis = GlobalTransform.Basis * new Vector3(1,0,0);
+			Vector3 rotationAxis = (GlobalTransform.Basis * new Vector3(1,0,0)).Normalized();
 			float rotationAngle = (float) (rotationSpeed * Math.PI/2);
 
 			this.gravityVec = this.gravityVec.Rotated(rotationAxis, rotationAngle);
