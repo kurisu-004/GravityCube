@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c23640j5qpcql"]
+[gd_scene load_steps=6 format=3 uid="uid://c23640j5qpcql"]
 
 [ext_resource type="MeshLibrary" uid="uid://cdy33n0hg7k5r" path="res://Scenes/MeshLib/floor.tres" id="1_ao8s3"]
+[ext_resource type="Script" path="res://Scripts/Room.cs" id="1_chbc4"]
 [ext_resource type="PackedScene" uid="uid://wrmcxmbdylqw" path="res://Scenes/Player.tscn" id="2_e7251"]
 [ext_resource type="PackedScene" uid="uid://bjtx0odf2tdv8" path="res://Scenes/RotationManager.tscn" id="3_oqlj8"]
 
@@ -9,6 +10,7 @@ ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="Room" type="Node3D"]
+script = ExtResource("1_chbc4")
 
 [node name="Floor" type="GridMap" parent="."]
 mesh_library = ExtResource("1_ao8s3")
