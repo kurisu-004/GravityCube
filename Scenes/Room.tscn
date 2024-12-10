@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c23640j5qpcql"]
+[gd_scene load_steps=8 format=3 uid="uid://c23640j5qpcql"]
 
 [ext_resource type="MeshLibrary" uid="uid://cdy33n0hg7k5r" path="res://Scenes/MeshLib/floor.tres" id="1_ao8s3"]
 [ext_resource type="PackedScene" uid="uid://wrmcxmbdylqw" path="res://Scenes/Player.tscn" id="2_e7251"]
 [ext_resource type="PackedScene" uid="uid://bjtx0odf2tdv8" path="res://Scenes/RotationManager.tscn" id="3_oqlj8"]
+[ext_resource type="Script" path="res://Scripts/Dagger.cs" id="4_2doac"]
+[ext_resource type="PackedScene" uid="uid://bix0wumuydggh" path="res://Assets/KayKit_Adventurers_1.0_FREE/Assets/fbx/dagger.fbx" id="4_3fohm"]
 
 [sub_resource type="Environment" id="Environment_6euti"]
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vdeep"]
 
 [node name="Room" type="Node3D"]
 
@@ -45,3 +49,35 @@ rotationManager = NodePath("../RotationManager")
 environment = SubResource("Environment_6euti")
 
 [node name="RotationManager" parent="." instance=ExtResource("3_oqlj8")]
+
+[node name="Dagger" type="Area3D" parent="."]
+script = ExtResource("4_2doac")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dagger"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 15.5, 10, 10)
+shape = SubResource("BoxShape3D_vdeep")
+
+[node name="dagger" parent="Dagger/CollisionShape3D" instance=ExtResource("4_3fohm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Victory" type="Window" parent="Dagger"]
+mode = 3
+initial_position = 1
+size = Vector2i(150, 50)
+visible = false
+
+[node name="Button" type="Button" parent="Dagger/Victory"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 12.0
+offset_bottom = 12.0
+
+[node name="Label" type="Label" parent="Dagger/Victory"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 140.0
+offset_bottom = 27.0
+text = "YOU WIN （´▽`）"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Dagger/Victory/Button" to="Dagger" method="_on_button_pressed"]
