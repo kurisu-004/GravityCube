@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnt5c0q6bhs1u"]
+
+[ext_resource type="MeshLibrary" uid="uid://cdy33n0hg7k5r" path="res://Scenes/MeshLib/floor.tres" id="1_02qm2"]
+
+[node name="Box" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 1)
+mesh_library = ExtResource("1_02qm2")
+data = {
+"cells": PackedInt32Array(-1, 0, 1507328, -65535, 0, 1245184, -65536, 65535, 983040, -65536, 1, 458752, 0, 0, 1441792, -131072, 0, 1310720)
+}
