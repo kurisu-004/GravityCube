@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://wrmcxmbdylqw" path="res://Scenes/Player.tscn" id="2_e7251"]
 [ext_resource type="PackedScene" uid="uid://bjtx0odf2tdv8" path="res://Scenes/RotationManager.tscn" id="3_oqlj8"]
 [ext_resource type="Script" path="res://Scripts/Dagger.cs" id="4_2doac"]
-[ext_resource type="PackedScene" uid="uid://bix0wumuydggh" path="res://Assets/KayKit_Adventurers_1.0_FREE/Assets/fbx/dagger.fbx" id="4_3fohm"]
+[ext_resource type="PackedScene" uid="uid://nlbsjjbb2avx" path="res://Scenes/dagger.tscn" id="5_jadf2"]
 
 [sub_resource type="Environment" id="Environment_6euti"]
 ambient_light_source = 2
@@ -57,8 +57,7 @@ script = ExtResource("4_2doac")
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 15.5, 10, 10)
 shape = SubResource("BoxShape3D_vdeep")
 
-[node name="dagger" parent="Dagger/CollisionShape3D" instance=ExtResource("4_3fohm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+[node name="dagger" parent="Dagger/CollisionShape3D" instance=ExtResource("5_jadf2")]
 
 [node name="Victory" type="Window" parent="Dagger"]
 mode = 3
