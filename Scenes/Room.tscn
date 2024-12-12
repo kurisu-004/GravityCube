@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c23640j5qpcql"]
+[gd_scene load_steps=12 format=3 uid="uid://c23640j5qpcql"]
 
 [ext_resource type="MeshLibrary" uid="uid://cdy33n0hg7k5r" path="res://Scenes/MeshLib/floor.tres" id="1_ao8s3"]
 [ext_resource type="Script" path="res://Scripts/Room.cs" id="1_cub36"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://Scripts/Dagger.cs" id="4_2doac"]
 [ext_resource type="PackedScene" uid="uid://nlbsjjbb2avx" path="res://Scenes/dagger.tscn" id="5_jadf2"]
 [ext_resource type="PackedScene" uid="uid://c3slq8fd2nhd0" path="res://Scenes/RotationButton.tscn" id="7_ktetu"]
+[ext_resource type="PackedScene" uid="uid://bfs5v78njcrm6" path="res://Scenes/Portal.tscn" id="8_ib1mo"]
+[ext_resource type="Script" path="res://Scripts/Portal.cs" id="9_dmym0"]
 
 [sub_resource type="Environment" id="Environment_6euti"]
 ambient_light_source = 2
@@ -87,5 +89,9 @@ horizontal_alignment = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 RotationAxisBase = Vector3(0, 0, 1)
 rotationManager = NodePath("../RotationManager")
+
+[node name="Portal" parent="." instance=ExtResource("8_ib1mo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1651, 1.41324, -3.88448)
+script = ExtResource("9_dmym0")
 
 [connection signal="pressed" from="Dagger/Victory/Button" to="Dagger" method="_on_button_pressed"]
