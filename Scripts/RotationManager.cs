@@ -86,6 +86,15 @@ public partial class RotationManager : Node3D
 		}
     }
 
+	public void RotateRoom(Vector3 rotationAxixBase)
+	{
+		if (!isRotating)
+		{
+			Vector3 rotationAxis = (GlobalTransform.Basis * rotationAxixBase).Normalized();
+			this.startRotation(rotationAxis, this.gravityVec, this.forwardVec, 1, rotationPeriodMS);
+		}
+	}
+
 	private void startRotation(Vector3 axis, Vector3 gravityOriginal, Vector3 forwardOriginal, int direction, int durationMsec) {
 		this.isRotating = true;
 		this.currentRotationAxis = axis;

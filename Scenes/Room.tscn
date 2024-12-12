@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c23640j5qpcql"]
+[gd_scene load_steps=10 format=3 uid="uid://c23640j5qpcql"]
 
 [ext_resource type="MeshLibrary" uid="uid://cdy33n0hg7k5r" path="res://Scenes/MeshLib/floor.tres" id="1_ao8s3"]
 [ext_resource type="Script" path="res://Scripts/Room.cs" id="1_cub36"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bjtx0odf2tdv8" path="res://Scenes/RotationManager.tscn" id="3_oqlj8"]
 [ext_resource type="Script" path="res://Scripts/Dagger.cs" id="4_2doac"]
 [ext_resource type="PackedScene" uid="uid://nlbsjjbb2avx" path="res://Scenes/dagger.tscn" id="5_jadf2"]
+[ext_resource type="PackedScene" uid="uid://c3slq8fd2nhd0" path="res://Scenes/RotationButton.tscn" id="7_ktetu"]
 
 [sub_resource type="Environment" id="Environment_6euti"]
 ambient_light_source = 2
@@ -44,7 +45,7 @@ metadata/_editor_floor_ = Vector3(0, 0, -160)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
 light_energy = 7.626
 
-[node name="Player" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("2_e7251")]
+[node name="Player" parent="." node_paths=PackedStringArray("rotationManager") groups=["Player"] instance=ExtResource("2_e7251")]
 rotationManager = NodePath("../RotationManager")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -53,6 +54,7 @@ environment = SubResource("Environment_6euti")
 [node name="RotationManager" parent="." instance=ExtResource("3_oqlj8")]
 
 [node name="Dagger" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 script = ExtResource("4_2doac")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dagger"]
@@ -80,5 +82,10 @@ offset_right = 140.0
 offset_bottom = 27.0
 text = "YOU WIN （´▽`）"
 horizontal_alignment = 1
+
+[node name="RotationButton" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_ktetu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+RotationAxisBase = Vector3(0, 0, 1)
+rotationManager = NodePath("../RotationManager")
 
 [connection signal="pressed" from="Dagger/Victory/Button" to="Dagger" method="_on_button_pressed"]
