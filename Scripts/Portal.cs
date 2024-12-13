@@ -3,7 +3,8 @@ using System;
 
 public partial class Portal : Area3D
 {
-	[Export] public Vector3 TargetPosition = Vector3.Zero; // 目标传送位置
+	// 传送门的目标位置(10, 0, 0)
+	[Export] public Vector3 TargetPosition = new Vector3(10, 0, 0);
 
 	public override void _Ready()
 	{

@@ -21,5 +21,5 @@ shape = SubResource("CapsuleShape3D_407jr")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.573, 2.08403)
+transform = Transform3D(1, 0, 0, 0, 0.952741, 0.303784, 0, -0.303784, 0.952741, 0, 3.73591, 1.04984)
 fov = 93.3673
