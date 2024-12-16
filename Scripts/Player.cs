@@ -25,56 +25,19 @@ public partial class Player : CharacterBody3D
 	// private float verticalRotation = 0.0f;
 	private float horizontalRotation = 0.0f;
 	private bool isNearObject = false;
-	private Area3D Dagger;
-	private Window victoryWindow;
+
 
 	public override void _Ready()
 	{
 		camera = GetNode<Camera3D>("Camera3D");
 		Input.MouseMode = Input.MouseModeEnum.Captured;
-		// Get the Area3D node for the interactive object
-		Dagger = GetNode<Area3D>("/root/Room/Dagger");
-		
-		// Get the victory window 
-		victoryWindow = GetNode<Window>("/root/Room/Dagger/Victory");
-
-		// Connect signals to detect when the player interacts with the object
-		Dagger.Connect("body_entered",new Callable(this, nameof(OnBodyEntered)));
-		Dagger.Connect("body_exited", new Callable(this, nameof(OnBodyExited)));
+	
 	}
 	
 	public override void _Process(double delta)
 	{
-		// Check if the player is near the object and presses the interact key
-		if (isNearObject && Input.IsActionJustPressed("interact"))
-		{
-			_on_Interact();
-		}
-	}
 	
-	// When the player enters the interactive area
-	private void OnBodyEntered(Node body)
-   {
-	if (body == this)  // 检查进入区域的是玩家
-	{
-		isNearObject = true;
-	}
-	}
-
-	private void OnBodyExited(Node body)
-   {
-	if (body == this)
-	{
-		isNearObject = false;
-	}
-	}
-
-
-	// Handle interaction
-	private void _on_Interact()
-	{
-		// Show the victory window
-		victoryWindow.Show();
+		
 	}
 	
 
