@@ -1,4 +1,4 @@
-## run Release/demo.exe
+# run Release/demo.exe
 ## control: 
 - move WASD
 - interact E
