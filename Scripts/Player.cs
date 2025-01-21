@@ -20,10 +20,13 @@ public partial class Player : CharacterBody3D
 	// private Vector3 gravityVec = new Vector3(0, -1, 0).Normalized();
 	// private Vector3 forwardVec = new Vector3(0, 0, -1);
 
-	private float mouseSensitivity_v = 0.1f;
+	private float mouseSensitivity_v = 0.001f;
 	private float mouseSensitivity_h = 0.001f;
 	// private float verticalRotation = 0.0f;
 	private float horizontalRotation = 0.0f;
+	private float verticalRotation = 0.0f;
+	private float verticalRotationBoundMin = -0.7f;
+	private float verticalRotationBoundMax = 0.7f;
 	private bool isNearObject = false;
 
 
@@ -51,7 +54,9 @@ public partial class Player : CharacterBody3D
 		
 		// Compute and set where player is looking
 		Vector3 forwardVec = this.globalForwardVec.Rotated(gravityVec.Normalized(), horizontalRotation);
-		this.Transform = this.Transform.LookingAt(GlobalPosition + forwardVec, this.UpDirection);
+		Vector3 rightVecLocal = forwardVec.Cross(gravityVec.Normalized());
+		Vector3 forwardVecVerticallyRotated = forwardVec.Rotated(rightVecLocal, verticalRotation);//forwardVec but rotated vertically as well around right axis
+		this.Transform = this.Transform.LookingAt(GlobalPosition + forwardVecVerticallyRotated, this.UpDirection);
 
 		float velocityUp = 0;
 		float velocityRight = 0;
@@ -100,6 +105,8 @@ public partial class Player : CharacterBody3D
 		if (@event is InputEventMouseMotion mouseEvent)
 		{
 			this.horizontalRotation += mouseEvent.Relative.X * mouseSensitivity_h;
+			this.verticalRotation = Mathf.Clamp(this.verticalRotation + mouseEvent.Relative.Y * mouseSensitivity_v, this.verticalRotationBoundMin, this.verticalRotationBoundMax);
+
 			// RotateY(-mouseEvent.Relative.X * mouseSensitivity_h);
 			// verticalRotation -= mouseEvent.Relative.Y * mouseSensitivity_v;
 			// verticalRotation = Mathf.Clamp(verticalRotation, -90.0f, 90.0f);
