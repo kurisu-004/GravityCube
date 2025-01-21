@@ -1,12 +1,26 @@
 [gd_scene load_steps=2 format=3 uid="uid://baanl8tjptvcg"]
 
-[ext_resource type="MeshLibrary" uid="uid://cdy33n0hg7k5r" path="res://Scenes/MeshLib/floor.tres" id="1_w716b"]
+[ext_resource type="PackedScene" uid="uid://k6wj8c1o4m4o" path="res://Assets/KayKit_HalloweenBits_1.0_FREE/Assets/fbx/floor_dirt.fbx" id="2_n1ecq"]
 
 [node name="Box" type="Node3D"]
 
-[node name="GridMap" type="GridMap" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
-mesh_library = ExtResource("1_w716b")
-data = {
-"cells": PackedInt32Array(-65536, 0, 131072, 65536, 0, 0, 0, 65535, 786432, 0, 1, 262144, 1, 0, 196608, 65535, 0, 65536)
-}
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2, 2, 2)
+
+[node name="floor_dirt2" parent="MeshInstance3D" instance=ExtResource("2_n1ecq")]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, -2.12527, 5.47592e-09)
+
+[node name="floor_dirt" parent="MeshInstance3D" instance=ExtResource("2_n1ecq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125, 0)
+
+[node name="floor_dirt5" parent="MeshInstance3D" instance=ExtResource("2_n1ecq")]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 4.37114e-08, 1, -2.125, 0, 0)
+
+[node name="floor_dirt6" parent="MeshInstance3D" instance=ExtResource("2_n1ecq")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 2.125, 0, 0)
+
+[node name="floor_dirt3" parent="MeshInstance3D" instance=ExtResource("2_n1ecq")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -2.125)
+
+[node name="floor_dirt4" parent="MeshInstance3D" instance=ExtResource("2_n1ecq")]
+transform = Transform3D(1, 0, 0, 0, 1.31134e-07, -1, 0, 1, 1.31134e-07, 0, 0, 2.125)
