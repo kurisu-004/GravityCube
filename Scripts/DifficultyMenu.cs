@@ -30,7 +30,11 @@ public partial class DifficultyMenu : Control
 
 	private void StartGame(string difficulty)
 	{
-		if (difficulty == "Hard") {
+		if (difficulty == "Easy") {
+			GetTree().ChangeSceneToFile("res://Scenes/Room.tscn");
+		} else if (difficulty == "Medium") {
+			GetTree().ChangeSceneToFile("res://Scenes/LevelTowers.tscn");
+		} else if (difficulty == "Hard") {
 			GetTree().ChangeSceneToFile("res://Scenes/LevelStaircase.tscn");
 		} else {		
 			GetTree().ChangeSceneToFile("res://Scenes/Room.tscn");
