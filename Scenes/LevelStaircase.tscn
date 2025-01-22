@@ -1,0 +1,442 @@
+[gd_scene load_steps=11 format=3 uid="uid://jqnhcovv6dax"]
+
+[ext_resource type="Script" path="res://Scripts/Room.cs" id="1_k18hj"]
+[ext_resource type="MeshLibrary" uid="uid://cdy33n0hg7k5r" path="res://Scenes/MeshLib/floor.tres" id="2_sxjio"]
+[ext_resource type="PackedScene" uid="uid://wrmcxmbdylqw" path="res://Scenes/Player.tscn" id="3_181p0"]
+[ext_resource type="PackedScene" uid="uid://bjtx0odf2tdv8" path="res://Scenes/RotationManager.tscn" id="4_t07um"]
+[ext_resource type="Script" path="res://Scripts/Dagger.cs" id="5_noxdg"]
+[ext_resource type="PackedScene" uid="uid://nlbsjjbb2avx" path="res://Scenes/dagger.tscn" id="6_nskry"]
+[ext_resource type="PackedScene" uid="uid://c3slq8fd2nhd0" path="res://Scenes/RotationButton.tscn" id="7_yrao8"]
+[ext_resource type="PackedScene" uid="uid://baanl8tjptvcg" path="res://Scenes/Box.tscn" id="10_dtwtk"]
+
+[sub_resource type="Environment" id="Environment_6euti"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vdeep"]
+
+[node name="LevelStaircase" type="Node3D"]
+script = ExtResource("1_k18hj")
+
+[node name="Floor" type="GridMap" parent="."]
+mesh_library = ExtResource("2_sxjio")
+cell_size = Vector3(4, 0.1, 4)
+data = {
+"cells": PackedInt32Array(-3, 65534, 0, -65534, 65535, 0, -4, 65532, 0, -4, 65533, 0, -4, 65534, 0, -4, 65535, 0, -4, 0, 0, -4, 1, 0, -4, 2, 0, -4, 3, 0, -3, 3, 0, -3, 2, 0, -3, 1, 0, -3, 0, 0, -3, 65535, 0, -3, 65533, 0, -3, 65532, 0, -2, 65532, 0, -1, 65532, 0, -65536, 65532, 0, -65535, 65532, 0, -65534, 65532, 0, -65533, 65532, 0, -65533, 65533, 0, -65533, 65534, 0, -65533, 65535, 0, -65534, 0, 0, -65534, 1, 0, -65534, 2, 0, -65533, 2, 0, -65533, 1, 0, -65533, 0, 0, -65533, 3, 0, -65534, 3, 0, -65535, 3, 0, -65536, 3, 0, -1, 3, 0, -2, 3, 0, -2, 2, 0, -2, 1, 0, -2, 0, 0, -2, 65535, 0, -2, 65534, 0, -2, 65533, 0, -1, 65533, 0, -65536, 65533, 0, -65535, 65533, 0, -65534, 65533, 0, -65534, 65534, 0, -65535, 65534, 0, -65536, 65534, 0, -1, 65534, 0, -1, 65535, 0, -1, 0, 0, -1, 1, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65535, 1, 0, -65535, 0, 0, -65535, 65535, 0, -65536, 65535, 0, -65536, 0, 0, -65536, 1, 0, 21037052, 65532, 1179648, 21037052, 65533, 1179648, 21037052, 65534, 1179648, 21037052, 65535, 1179648, 21037052, 0, 1179648, 21037052, 1, 1179648, 21037052, 2, 1179648, 21037052, 3, 1179648, 21037053, 65532, 1179648, 21037053, 65533, 1179648, 21037053, 65534, 1179648, 21037053, 65535, 1179648, 21037053, 0, 1179648, 21037053, 1, 1179648, 21037053, 2, 1179648, 21037053, 3, 1179648, 21037054, 65532, 1179648, 21037054, 65533, 1179648, 21037054, 65534, 1179648, 21037054, 65535, 1179648, 21037054, 0, 1179648, 21037054, 1, 1179648, 21037054, 2, 1179648, 21037054, 3, 1179648, 21037055, 65532, 1179648, 21037055, 65533, 1179648, 21037055, 65534, 1179648, 21037055, 65535, 1179648, 21037055, 0, 1179648, 21037055, 1, 1179648, 21037055, 2, 1179648, 21037055, 3, 1179648, 20971520, 65532, 1179648, 20971520, 65533, 1179648, 20971520, 65534, 1179648, 20971520, 65535, 1179648, 20971520, 0, 1179648, 20971520, 1, 1179648, 20971520, 2, 1179648, 20971520, 3, 1179648, 20971521, 65532, 1179648, 20971521, 65533, 1179648, 20971521, 65534, 1179648, 20971521, 65535, 1179648, 20971521, 0, 1179648, 20971521, 1, 1179648, 20971521, 2, 1179648, 20971521, 3, 1179648, 20971522, 65532, 1179648, 20971522, 65533, 1179648, 20971522, 65534, 1179648, 20971522, 65535, 1179648, 20971522, 0, 1179648, 20971522, 1, 1179648, 20971522, 2, 1179648, 20971522, 3, 1179648, 20971523, 65532, 1179648, 20971523, 65533, 1179648, 20971523, 65534, 1179648, 20971523, 65535, 1179648, 20971523, 0, 1179648, 20971523, 1, 1179648, 20971523, 2, 1179648, 20971523, 3, 1179648)
+}
+metadata/_editor_floor_ = Vector3(0, 320, 0)
+
+[node name="Wall" type="GridMap" parent="."]
+mesh_library = ExtResource("2_sxjio")
+cell_size = Vector3(0.1, 4, 4)
+data = {
+"cells": PackedInt32Array(65376, 65532, 589824, 65376, 65533, 589824, 65376, 65534, 589824, 65376, 65535, 589824, 65376, 0, 589824, 65376, 1, 589824, 65376, 2, 589824, 65376, 3, 589824, 130912, 65532, 589824, 130912, 65533, 589824, 130912, 65534, 589824, 130912, 65535, 589824, 130912, 0, 589824, 130912, 1, 589824, 130912, 2, 589824, 130912, 3, 589824, 196448, 65532, 589824, 196448, 65533, 589824, 196448, 65534, 589824, 196448, 65535, 589824, 196448, 0, 589824, 196448, 1, 589824, 196448, 2, 589824, 196448, 3, 589824, 261984, 65532, 589824, 261984, 65533, 589824, 261984, 65534, 589824, 261984, 65535, 589824, 261984, 0, 589824, 261984, 1, 589824, 261984, 2, 589824, 261984, 3, 589824, 327520, 65532, 589824, 327520, 65533, 589824, 327520, 65534, 589824, 327520, 65535, 589824, 327520, 0, 589824, 327520, 1, 589824, 327520, 2, 589824, 327520, 3, 589824, 393056, 65532, 589824, 393056, 65533, 589824, 393056, 65534, 589824, 393056, 65535, 589824, 393056, 0, 589824, 393056, 1, 589824, 393056, 2, 589824, 393056, 3, 589824, 458592, 65532, 589824, 458592, 65533, 589824, 458592, 65534, 589824, 458592, 65535, 589824, 458592, 0, 589824, 458592, 1, 589824, 458592, 2, 589824, 458592, 3, 589824, 524128, 65532, 589824, 524128, 65533, 589824, 524128, 65534, 589824, 524128, 65535, 589824, 524128, 0, 589824, 524128, 1, 589824, 524128, 2, 589824, 524128, 3, 589824, 160, 65532, 720896, 160, 65533, 720896, 160, 65534, 720896, 160, 65535, 720896, 160, 0, 720896, 160, 1, 720896, 160, 2, 720896, 160, 3, 720896, 65696, 65532, 720896, 65696, 65533, 720896, 65696, 65534, 720896, 65696, 65535, 720896, 65696, 0, 720896, 65696, 1, 720896, 65696, 2, 720896, 65696, 3, 720896, 131232, 65532, 720896, 131232, 65533, 720896, 131232, 65534, 720896, 131232, 65535, 720896, 131232, 0, 720896, 131232, 1, 720896, 131232, 2, 720896, 131232, 3, 720896, 196768, 65532, 720896, 196768, 65533, 720896, 196768, 65534, 720896, 196768, 65535, 720896, 196768, 0, 720896, 196768, 1, 720896, 196768, 2, 720896, 196768, 3, 720896, 262304, 65532, 720896, 262304, 65533, 720896, 262304, 65534, 720896, 262304, 65535, 720896, 262304, 0, 720896, 262304, 1, 720896, 262304, 2, 720896, 262304, 3, 720896, 327840, 65532, 720896, 327840, 65533, 720896, 327840, 65534, 720896, 327840, 65535, 720896, 327840, 0, 720896, 327840, 1, 720896, 327840, 2, 720896, 327840, 3, 720896, 393376, 65532, 720896, 393376, 65533, 720896, 393376, 65534, 720896, 393376, 65535, 720896, 393376, 0, 720896, 393376, 1, 720896, 393376, 2, 720896, 393376, 3, 720896, 458912, 65532, 720896, 458912, 65533, 720896, 458912, 65534, 720896, 458912, 65535, 720896, 458912, 0, 720896, 458912, 1, 720896, 458912, 2, 720896, 458912, 3, 720896)
+}
+metadata/_editor_floor_ = Vector3(160, 0, 160)
+
+[node name="Wall2" type="GridMap" parent="."]
+mesh_library = ExtResource("2_sxjio")
+cell_size = Vector3(4, 4, 0.1)
+data = {
+"cells": PackedInt32Array(65532, 160, 983040, 131068, 160, 983040, 196604, 160, 983040, 262140, 160, 983040, 327676, 160, 983040, 393212, 160, 983040, 458748, 160, 983040, 524284, 160, 983040, 65533, 160, 983040, 131069, 160, 983040, 196605, 160, 983040, 262141, 160, 983040, 327677, 160, 983040, 393213, 160, 983040, 458749, 160, 983040, 524285, 160, 983040, 65534, 160, 983040, 131070, 160, 983040, 196606, 160, 983040, 262142, 160, 983040, 327678, 160, 983040, 393214, 160, 983040, 458750, 160, 983040, 524286, 160, 983040, 65535, 160, 983040, 131071, 160, 983040, 196607, 160, 983040, 262143, 160, 983040, 327679, 160, 983040, 393215, 160, 983040, 458751, 160, 983040, 524287, 160, 983040, 0, 160, 983040, 65536, 160, 983040, 131072, 160, 983040, 196608, 160, 983040, 262144, 160, 983040, 327680, 160, 983040, 393216, 160, 983040, 458752, 160, 983040, 1, 160, 983040, 65537, 160, 983040, 131073, 160, 983040, 196609, 160, 983040, 262145, 160, 983040, 327681, 160, 983040, 393217, 160, 983040, 458753, 160, 983040, 2, 160, 983040, 65538, 160, 983040, 131074, 160, 983040, 196610, 160, 983040, 262146, 160, 983040, 327682, 160, 983040, 393218, 160, 983040, 458754, 160, 983040, 3, 160, 983040, 65539, 160, 983040, 131075, 160, 983040, 196611, 160, 983040, 262147, 160, 983040, 327683, 160, 983040, 393219, 160, 983040, 458755, 160, 983040, 65532, 65376, 458752, 131068, 65376, 458752, 196604, 65376, 458752, 262140, 65376, 458752, 327676, 65376, 458752, 393212, 65376, 458752, 458748, 65376, 458752, 524284, 65376, 458752, 65533, 65376, 458752, 131069, 65376, 458752, 196605, 65376, 458752, 262141, 65376, 458752, 327677, 65376, 458752, 393213, 65376, 458752, 458749, 65376, 458752, 524285, 65376, 458752, 65534, 65376, 458752, 131070, 65376, 458752, 196606, 65376, 458752, 262142, 65376, 458752, 327678, 65376, 458752, 393214, 65376, 458752, 458750, 65376, 458752, 524286, 65376, 458752, 65535, 65376, 458752, 131071, 65376, 458752, 196607, 65376, 458752, 262143, 65376, 458752, 327679, 65376, 458752, 393215, 65376, 458752, 458751, 65376, 458752, 524287, 65376, 458752, 0, 65376, 458752, 65536, 65376, 458752, 131072, 65376, 458752, 196608, 65376, 458752, 262144, 65376, 458752, 327680, 65376, 458752, 393216, 65376, 458752, 458752, 65376, 458752, 1, 65376, 458752, 65537, 65376, 458752, 131073, 65376, 458752, 196609, 65376, 458752, 262145, 65376, 458752, 327681, 65376, 458752, 393217, 65376, 458752, 458753, 65376, 458752, 2, 65376, 458752, 65538, 65376, 458752, 131074, 65376, 458752, 196610, 65376, 458752, 262146, 65376, 458752, 327682, 65376, 458752, 393218, 65376, 458752, 458754, 65376, 458752, 3, 65376, 458752, 65539, 65376, 458752, 131075, 65376, 458752, 196611, 65376, 458752, 262147, 65376, 458752, 327683, 65376, 458752, 393219, 65376, 458752, 458755, 65376, 458752)
+}
+metadata/_editor_floor_ = Vector3(0, 0, -160)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65256, 19.3934, 4.41809)
+light_energy = 7.626
+
+[node name="Player" parent="." node_paths=PackedStringArray("rotationManager") groups=["Player"] instance=ExtResource("3_181p0")]
+transform = Transform3D(-0.970452, 0, -0.241295, 0, 1, 0, 0.241295, 0, -0.970452, -0.357152, 0.0433116, 5.83475)
+rotationManager = NodePath("../RotationManager")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6euti")
+
+[node name="RotationManager" parent="." instance=ExtResource("4_t07um")]
+
+[node name="Dagger" type="Area3D" parent="."]
+transform = Transform3D(0.744627, 1.61095, 0.922148, 0.388928, 0.83612, -1.77472, -1.81501, 0.840078, -0.00197375, -1.37675, 10.7083, -2.56054)
+script = ExtResource("5_noxdg")
+
+[node name="Victory" type="Window" parent="Dagger"]
+mode = 3
+initial_position = 1
+size = Vector2i(150, 50)
+visible = false
+
+[node name="Button" type="Button" parent="Dagger/Victory"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 12.0
+offset_bottom = 12.0
+
+[node name="Label" type="Label" parent="Dagger/Victory"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 140.0
+offset_bottom = 27.0
+text = "YOU WIN （´▽`）"
+horizontal_alignment = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dagger"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+shape = SubResource("BoxShape3D_vdeep")
+
+[node name="dagger" parent="Dagger/CollisionShape3D" instance=ExtResource("6_nskry")]
+transform = Transform3D(1, 9.31323e-10, 8.76025e-09, 1.95578e-08, 1, 2.98023e-08, 8.14907e-09, -2.98023e-08, 1, 0.0976424, -0.0788454, 0.170577)
+
+[node name="BoxGroup" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Box" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -16)
+
+[node name="Box2" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -12)
+
+[node name="Box3" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -8)
+
+[node name="Box4" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8)
+
+[node name="Box5" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -4)
+
+[node name="Box7" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="Box8" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="Box9" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="Box10" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="Box11" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="Box12" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, -16)
+
+[node name="Box13" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, -12)
+
+[node name="Box14" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, -8)
+
+[node name="Box15" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, -8)
+
+[node name="Box18" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 0)
+
+[node name="Box19" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, 4)
+
+[node name="Box20" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, 8)
+
+[node name="Box21" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 8)
+
+[node name="Box22" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 12)
+
+[node name="Box23" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, -16)
+
+[node name="Box24" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, -12)
+
+[node name="Box25" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, -8)
+
+[node name="Box26" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 8, -8)
+
+[node name="Box27" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, -8)
+
+[node name="Box28" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, -4)
+
+[node name="Box89" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -8)
+
+[node name="Box90" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -4)
+
+[node name="Box29" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 8, 0)
+
+[node name="Box30" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, 4)
+
+[node name="Box31" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, 8)
+
+[node name="Box32" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 8, 8)
+
+[node name="Box33" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 8, 12)
+
+[node name="Box34" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 12, -16)
+
+[node name="Box35" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 12, -12)
+
+[node name="Box36" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 12, -8)
+
+[node name="Box37" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 12, -8)
+
+[node name="Box38" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 12, -8)
+
+[node name="Box39" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 12, -4)
+
+[node name="Box40" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 12, 0)
+
+[node name="Box41" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 12, 4)
+
+[node name="Box42" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 12, 8)
+
+[node name="Box43" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 12, 8)
+
+[node name="Box44" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 12, 12)
+
+[node name="Box45" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 16, -16)
+
+[node name="Box46" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 16, -12)
+
+[node name="Box47" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 16, -8)
+
+[node name="Box48" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 16, -8)
+
+[node name="Box49" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 16, -8)
+
+[node name="Box50" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 16, -4)
+
+[node name="Box51" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 16, 0)
+
+[node name="Box52" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 16, 4)
+
+[node name="Box53" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 16, 8)
+
+[node name="Box54" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 16, 8)
+
+[node name="Box55" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 16, 12)
+
+[node name="Box56" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 20, -16)
+
+[node name="Box57" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 20, -12)
+
+[node name="Box58" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 20, -8)
+
+[node name="Box59" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 20, -8)
+
+[node name="Box60" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 20, -8)
+
+[node name="Box61" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 20, -4)
+
+[node name="Box62" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 20, 0)
+
+[node name="Box63" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 20, 4)
+
+[node name="Box64" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 20, 8)
+
+[node name="Box65" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 20, 8)
+
+[node name="Box66" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 20, 12)
+
+[node name="Box67" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 24, -16)
+
+[node name="Box68" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 24, -12)
+
+[node name="Box69" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 24, -8)
+
+[node name="Box70" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 24, -8)
+
+[node name="Box71" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 24, -8)
+
+[node name="Box72" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 24, -4)
+
+[node name="Box73" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 24, 0)
+
+[node name="Box74" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 24, 4)
+
+[node name="Box75" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 24, 8)
+
+[node name="Box76" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 24, 8)
+
+[node name="Box77" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 24, 12)
+
+[node name="Box78" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 28, -16)
+
+[node name="Box79" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 28, -12)
+
+[node name="Box80" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 28, -8)
+
+[node name="Box81" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 28, -8)
+
+[node name="Box82" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 28, -8)
+
+[node name="Box83" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 28, -4)
+
+[node name="Box84" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 28, 0)
+
+[node name="Box85" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 28, 4)
+
+[node name="Box86" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 28, 8)
+
+[node name="Box87" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 28, 8)
+
+[node name="Box88" parent="BoxGroup" instance=ExtResource("10_dtwtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 28, 12)
+
+[node name="RotationButton" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.07329, 0, 14.0705)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton2" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.0733, 0, 14.0705)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton3" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.0733, 0, 14.0705)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton9" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.0733, 0, -1.92948)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton10" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.0733, 0, -1.92948)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton11" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.07329, 0, -1.92948)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton12" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.0733, 0, -1.92948)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton13" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.9267, 0, -1.92948)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton17" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 5.9267, 18, -11.9295)
+RotationAxisBase = Vector3(-1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton18" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -14.0733, 18, -11.9295)
+RotationAxisBase = Vector3(-1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton14" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.9267, 0, -1.92948)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton15" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.92671, 0, -1.92948)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton16" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.9267, 0, -1.92948)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton4" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.07329, 0, 14.0705)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton5" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.92671, 0, 14.0705)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton6" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.92671, 0, 14.0705)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton7" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.92671, 0, 14.0705)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[node name="RotationButton8" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.9267, 0, 14.0705)
+RotationAxisBase = Vector3(1, 0, 0)
+rotationManager = NodePath("../RotationManager")
+
+[connection signal="pressed" from="Dagger/Victory/Button" to="Dagger" method="_on_button_pressed"]

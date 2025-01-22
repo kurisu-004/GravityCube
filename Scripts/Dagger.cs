@@ -10,7 +10,7 @@ public partial class Dagger : Area3D
 
 	public override void _Ready()
 	{
-		victorywindow=GetNode<Window>("/root/Room/Dagger/Victory");
+		victorywindow=GetNode<Window>("Victory");
 		Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
 		Connect("body_exited", new Callable(this, nameof(OnBodyExited)));
 	}
