@@ -382,6 +382,7 @@ rotationManager = NodePath("../RotationManager")
 
 [node name="RotationButton12" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.0733, 0, -1.92948)
+RotationAxisBase = Vector3(1, 0, 0)
 rotationManager = NodePath("../RotationManager")
 
 [node name="RotationButton13" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_yrao8")]
