@@ -1,9 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfs5v78njcrm6"]
+[gd_scene load_steps=4 format=3 uid="uid://d5s0cdk5l0tq"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5d7hi"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_femlj"]
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_e1oev"]
-material = SubResource("StandardMaterial3D_5d7hi")
+material = SubResource("StandardMaterial3D_femlj")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rkw4a"]
 

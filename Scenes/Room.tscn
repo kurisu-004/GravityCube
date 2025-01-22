@@ -15,7 +15,7 @@
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vdeep"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_hh1oq"]
 
 [node name="Room" type="Node3D"]
 script = ExtResource("1_cub36")
@@ -49,7 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
 light_energy = 7.626
 
 [node name="Player" parent="." node_paths=PackedStringArray("rotationManager") groups=["Player"] instance=ExtResource("2_e7251")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.88, 0.0433116, 0.181916)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80258, 0.0433116, 12.2013)
 rotationManager = NodePath("../RotationManager")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -57,11 +57,16 @@ environment = SubResource("Environment_6euti")
 
 [node name="RotationManager" parent="." instance=ExtResource("3_oqlj8")]
 
+[node name="RotationButton" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_ktetu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, -10)
+rotationManager = NodePath("../RotationManager")
+
 [node name="Dagger" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 5.28866)
+transform = Transform3D(4.06393, 2.91281, 0, -2.88421, 4.02402, -0.698976, -0.407198, 0.568118, 4.9509, 14.1674, 14.4515, 2.62873)
 script = ExtResource("4_2doac")
 
 [node name="Victory" type="Window" parent="Dagger"]
+auto_translate_mode = 1
 mode = 3
 initial_position = 1
 size = Vector2i(150, 50)
@@ -82,19 +87,16 @@ text = "YOU WIN （´▽`）"
 horizontal_alignment = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dagger"]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 19.5, 10, -5)
-shape = SubResource("BoxShape3D_vdeep")
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+shape = SubResource("BoxShape3D_hh1oq")
 
 [node name="dagger" parent="Dagger/CollisionShape3D" instance=ExtResource("5_jadf2")]
-transform = Transform3D(1, 0, 0, 0, 1, -8.35189e-23, 0, -8.35188e-23, 1, 0, 0, 0)
-
-[node name="RotationButton" parent="." node_paths=PackedStringArray("rotationManager") instance=ExtResource("7_ktetu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -4)
-rotationManager = NodePath("../RotationManager")
+transform = Transform3D(1, 9.31323e-10, 8.76025e-09, 1.95578e-08, 1, 2.98023e-08, 8.14907e-09, -2.98023e-08, 1, 0.0976424, -0.0788454, 0.170577)
 
 [node name="Portal" parent="." instance=ExtResource("8_ib1mo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8349, 1.41324, -3.88448)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.80574, 1.41324, -10.1951)
 script = ExtResource("9_dmym0")
+TargetPosition = Vector3(10, 4, 0)
 
 [node name="BoxGroup" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
@@ -121,5 +123,101 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.9452)
 
 [node name="Box8" parent="BoxGroup" instance=ExtResource("10_04eg3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.0158)
+
+[node name="Box9" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12.0237)
+
+[node name="Box10" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8.08315)
+
+[node name="Box11" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4.00437)
+
+[node name="Box12" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Box13" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3.94786)
+
+[node name="Box14" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -7.9255)
+
+[node name="Box15" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -11.9452)
+
+[node name="Box16" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -16.0158)
+
+[node name="Box17" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12.0237)
+
+[node name="Box18" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8.08315)
+
+[node name="Box19" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4.00437)
+
+[node name="Box20" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="Box21" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -3.94786)
+
+[node name="Box22" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -7.9255)
+
+[node name="Box23" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -11.9452)
+
+[node name="Box24" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -16.0158)
+
+[node name="Box25" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12.0237)
+
+[node name="Box26" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8.08315)
+
+[node name="Box27" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4.00437)
+
+[node name="Box28" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="Box29" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -3.94786)
+
+[node name="Box30" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -7.9255)
+
+[node name="Box31" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -11.9452)
+
+[node name="Box32" parent="BoxGroup" instance=ExtResource("10_04eg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -16.0158)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.43102, -0.141282, -0.891213, 0.445892, 0.892003, 0.0742408, 0.784476, -0.429384, 0.447468, -7.76926, 14.9646, 12.3634)
+shadow_enabled = true
+spot_range = 75.3611
+spot_attenuation = -0.11
+spot_angle = 13.0728
+spot_angle_attenuation = 1.03526
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(0.866073, -0.450899, 0.215888, 0.279904, 0.795179, 0.537907, -0.414211, -0.405438, 0.814892, -4.98305, 14.9646, 10.5445)
+shadow_enabled = true
+spot_range = 43.2007
+spot_attenuation = -0.32
+spot_angle = 8.12145
+spot_angle_attenuation = 1.03526
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(0.791308, -0.400786, 0.461738, 0.441123, 0.897158, 0.0227477, -0.423369, 0.185683, 0.886725, 12.6334, 5.64435, 10.4768)
+shadow_enabled = true
+spot_range = 35.273
+spot_attenuation = -0.76
+spot_angle = 7.1538
+spot_angle_attenuation = 1.03526
 
 [connection signal="pressed" from="Dagger/Victory/Button" to="Dagger" method="_on_button_pressed"]

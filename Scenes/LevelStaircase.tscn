@@ -56,7 +56,7 @@ environment = SubResource("Environment_6euti")
 [node name="RotationManager" parent="." instance=ExtResource("4_t07um")]
 
 [node name="Dagger" type="Area3D" parent="."]
-transform = Transform3D(0.744627, 1.61095, 0.922148, 0.388928, 0.83612, -1.77472, -1.81501, 0.840078, -0.00197375, -1.37675, 10.7083, -2.56054)
+transform = Transform3D(0.128626, 0.268532, -3.9889, -1.67523, -3.62008, -0.297723, -3.63002, 1.68016, -0.00394613, -2.7334, 12.1255, -1.25897)
 script = ExtResource("5_noxdg")
 
 [node name="Victory" type="Window" parent="Dagger"]
@@ -438,5 +438,41 @@ rotationManager = NodePath("../RotationManager")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.9267, 0, 14.0705)
 RotationAxisBase = Vector3(1, 0, 0)
 rotationManager = NodePath("../RotationManager")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.987254, -0.0476164, 0.151865, 0.078743, 0.975362, -0.206078, -0.138311, 0.21541, 0.966679, 0.0628848, 9.07744, 11.741)
+shadow_enabled = true
+spot_range = 23.4219
+spot_attenuation = 0.24
+spot_angle = 14.3526
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(0.996383, 0.053479, 0.0660339, -0.0848604, 0.666312, 0.740828, -0.00438046, -0.743753, 0.668441, 3.12142, 12.3855, 9.02209)
+shadow_enabled = true
+spot_range = 23.4219
+spot_attenuation = 0.24
+spot_angle = 7.74157
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="."]
+transform = Transform3D(0.955025, 0.0977277, 0.279958, -0.210185, 0.889079, 0.406647, -0.209164, -0.447201, 0.869633, -7.48336, 27.4767, 9.02209)
+shadow_enabled = true
+spot_range = 37.8637
+spot_attenuation = 0.12
+spot_angle = 13.0961
+spot_angle_attenuation = 2.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(0.612822, 0.621157, -0.48848, -0.220952, 0.728191, 0.648782, 0.758702, -0.289657, 0.583498, 0.840449, 12.3855, 8.62216)
+shadow_enabled = true
+spot_range = 24.9741
+spot_attenuation = 0.24
+spot_angle = 5.69642
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.780087, -0.528525, 0.334851, -0.138556, 0.667829, 0.731305, -0.610136, 0.524086, -0.594195, 15.7293, 12.3878, 4.47073)
+shadow_enabled = true
+spot_range = 24.9741
+spot_attenuation = 0.24
+spot_angle = 5.69642
 
 [connection signal="pressed" from="Dagger/Victory/Button" to="Dagger" method="_on_button_pressed"]
