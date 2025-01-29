@@ -5,6 +5,7 @@ public partial class Portal : Area3D
 {
 	// 传送门的目标位置(10, 0, 0)
 	[Export] public Vector3 TargetPosition = new Vector3(10, 0, 0);
+	[Export] public AudioStreamPlayer3D audioPlayer;
 
 	public override void _Ready()
 	{
@@ -18,7 +19,7 @@ public partial class Portal : Area3D
 		{
 			// 设置玩家的新位置
 			player.GlobalTransform = new Transform3D(Basis.Identity, TargetPosition);
-			// this.GetChild<AudioStreamPlayer3D>(0).Play();
+			this.audioPlayer.Play();
 
 			// 可选：添加传送的视觉或音效效果
 			// GD.Print($"Player teleported to {TargetPosition}");
