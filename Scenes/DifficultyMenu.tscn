@@ -38,6 +38,12 @@ text = "Medium
 layout_mode = 2
 text = "Hard"
 
+[node name="Hard2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Hard2
+"
+
 [connection signal="pressed" from="VBoxContainer/Easy" to="." method="OnEasyPressed"]
 [connection signal="pressed" from="VBoxContainer/Medium" to="." method="OnMediumPressed"]
 [connection signal="pressed" from="VBoxContainer/Hard" to="." method="OnHardPressed"]
+[connection signal="pressed" from="VBoxContainer/Hard2" to="." method="OnHard2Pressed"]
