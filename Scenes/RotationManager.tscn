@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjtx0odf2tdv8"]
+[gd_scene load_steps=3 format=3 uid="uid://bjtx0odf2tdv8"]
 
 [ext_resource type="Script" path="res://Scripts/RotationManager.cs" id="1_s8m1p"]
+[ext_resource type="AudioStream" uid="uid://b75mas3qe8nbt" path="res://Assets/Sounds/room_rotating.mp3" id="2_v6jvk"]
 
 [node name="RotationManager" type="Node3D"]
 script = ExtResource("1_s8m1p")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_v6jvk")
+volume_db = -6.188

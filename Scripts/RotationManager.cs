@@ -103,5 +103,7 @@ public partial class RotationManager : Node3D
 		this.currentRotationDirection = direction;
 		this.currentRotationTimeStart = Time.GetTicksMsec();
 		this.currentRotationTimeEnd = Time.GetTicksMsec() + (ulong) durationMsec;
+
+		this.GetNode<AudioStreamPlayer3D>("AudioStreamPlayer3D").Play();
 	}
 }

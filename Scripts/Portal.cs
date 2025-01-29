@@ -18,6 +18,7 @@ public partial class Portal : Area3D
 		{
 			// 设置玩家的新位置
 			player.GlobalTransform = new Transform3D(Basis.Identity, TargetPosition);
+			// this.GetChild<AudioStreamPlayer3D>(0).Play();
 
 			// 可选：添加传送的视觉或音效效果
 			// GD.Print($"Player teleported to {TargetPosition}");

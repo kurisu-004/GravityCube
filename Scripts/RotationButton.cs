@@ -7,11 +7,13 @@ public partial class RotationButton : Area3D
 
 	private bool _isPlayerNearby = false;
 	[Export] public RotationManager rotationManager;
+	private AudioStreamPlayer3D audioPlayer;
 
 	public override void _Ready()
 	{
 		Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
 		Connect("body_exited", new Callable(this, nameof(OnBodyExited)));
+		audioPlayer = GetNode<AudioStreamPlayer3D>("AudioStreamPlayer3D");
 	}
 
 	public override void _Input(InputEvent @event)
@@ -21,6 +23,7 @@ public partial class RotationButton : Area3D
 		if (@event.IsActionPressed("interact"))
 		{
 			rotationManager?.RotateRoom(RotationAxisBase);
+			audioPlayer.Play();
 		}
 	}
 
